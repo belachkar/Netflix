@@ -1,7 +1,7 @@
-(function() {
+(function () {
   const tabItems = document.querySelectorAll('.tab-item');
   const tabContentItems = document.querySelectorAll('.tab-content-item');
-  
+
   // Remove class from all elements
   const removeClass = (className, items) => {
     if (items && items.length > 0) {
@@ -10,15 +10,15 @@
       items.classList.remove(className);
     }
   }
-  
+
   // Select tab cntent item
-  function selectItem (e) {
-  const tabBorderClass = 'tab-border';
-  const showupClass = 'show';
-  
+  function selectItem() {
+    const tabBorderClass = 'tab-border';
+    const showupClass = 'show';
+
     removeClass(tabBorderClass, tabItems);
     removeClass(showupClass, tabContentItems);
-  
+
     // Add border to current tab
     this.classList.add(tabBorderClass);
 
@@ -31,7 +31,7 @@
     // Add show class to the content tab
     getItemToShow.classList.add(showupClass);
   }
-  
+
   // Listening for tab click
   tabItems.forEach(item => item.addEventListener('click', selectItem));
 })();
