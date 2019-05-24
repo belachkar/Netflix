@@ -1,6 +1,7 @@
 :root {
   --primary-color: #e50914;
   --primary-color-lighter: #f90926;
+  --primary-text-color: #999;
   --dark-color: #141414;
 }
 
@@ -23,14 +24,14 @@ body {
   /* To use only if the background is dark */
   -webkit-font-smoothing: antialiased;
   background: #000;
-  color: #999;
+  color: var(--primary-text-color);
 }
 
-ul {
+ul, li {
   list-style: none;
 }
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5 {
   color: #fff;
 }
 
@@ -62,7 +63,8 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.6);
-  box-shadow: inset 120px 100px 250px #000, inset -120px -100px 250px #000;;
+  box-shadow: inset 100px 100px 400px #000, inset -100px -100px 400px #000;
+  ;
   z-index: 1;
 }
 
@@ -83,7 +85,7 @@ img {
 .showcase-top a {
   position: absolute;
   top: 50%;
-  right: 0;  
+  right: 0;
   transform: translate(-50%, -50%);
 }
 
@@ -96,7 +98,7 @@ img {
   align-items: center;
   text-align: center;
   margin-top: 9rem;
-  z-index: 2
+  z-index: 2;
 }
 
 .showcase-content h1 {
@@ -116,10 +118,11 @@ img {
 }
 
 /* Tabs */
+
 .tabs {
   background: var(--dark-color);
   padding-top: 1rem;
-  border-bottom: 3px solid #3d3d3d;
+  border-bottom: 2px solid #3d3d3d;
 }
 
 .tabs .container {
@@ -136,11 +139,11 @@ img {
   padding-top: 0.5rem;
 }
 
-.tabs .container > div {
+.tabs .container>div {
   padding: 1.5rem 0;
 }
 
-.tabs .container > div:hover {
+.tabs .container>div:hover {
   color: #fff;
   cursor: pointer;
 }
@@ -149,7 +152,54 @@ img {
   border-bottom: var(--primary-color) 4px solid;
 }
 
+/* Tab Content */
+
+.tab-content {
+  padding: 3rem 0;
+  background: #000;
+  color: #fff;
+}
+
+#tab-1-content .tab-1-content-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#tab-1-content .tab-1-content-inner p {
+  margin-bottom: 2rem;
+}
+
+#tab-2-content .tab-2-content-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+#tab-2-content .tab-2-content-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#tab-3-content .tab-3-content-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Container */
+
 .container {
   max-width: 75%;
   margin: auto;
@@ -157,24 +207,100 @@ img {
   padding: 0 2rem;
 }
 
+/* Text Styles */
+
+.text-xl {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-lg {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.text-md {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-dark {
+  color: var(--primary-text-color);
+}
+
+/* Tables */
+
+table {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: var(--primary-text-color);
+}
+
+th, td {
+  padding: 0.9rem;
+}
+
+th {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.table-striped tr:nth-of-type(2n) {
+  background: #222;
+}
+
+.table-firstchild-left td:first-child {
+  text-align: left;
+}
+
+/* Footer */
+
+footer {
+  max-width: 80%;
+  margin: 1rem auto;
+  overflow: auto;
+}
+
+footer, footer a {
+  color: var(--primary-text-color);
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin-bottom: 2rem;
+}
+
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}
+
 /* Buttons */
+
 .btn {
   display: inline-block;
   background: var(--primary-color);
   color: fff;
-  padding: 0.4rem 1.3rem;
-  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
   text-align: center;
   border: none;
   cursor: pointer;
   margin-right: 0.5rem;
   outline: none;
-  box-shadow: 0 1px 0 rgba(0,0,0, 0.45);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
   border-radius: 2px;
 }
 
 .btn:hover {
-  /* opacity: 0.9; */
   background: var(--primary-color-lighter);
 }
 
@@ -184,15 +310,109 @@ img {
 
 .btn-xl {
   font-size: 2rem;
-  padding: 1.5rem 2.1rem;
+  font-weight: 400;
+  letter-spacing: 1.9px;
+  padding: 1.8rem 2.5rem;
   text-transform: uppercase;
 }
 
 .btn-lg {
-  font-size: 1rem;
-  padding: 0.8rem 1.3rem;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 1.9px;
+  padding: 1.2rem 1.3rem;
   text-transform: uppercase;
 }
 
+.btn-md {
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+}
 
+.btn .btn-icon {
+  margin-left: 0.5em;
+}
 
+@media(max-width: 960px) {
+  .hide-sm {
+    display: none;
+  }
+  /* Showcase */
+  .showcase {
+    height: 70vh;
+  }
+  .showcase::after {
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: inset 90px 90px 200px #000, inset -90px -90px 200px #000;
+  }
+  .showcase-top img {
+    top: 30%;
+    left: 5%;
+    transform: translate(0);
+  }
+  .showcase-content h1 {
+    font-size: 3.7rem;
+    line-height: 1;
+  }
+  .showcase-content p {
+    font-size: 1.5rem;
+  }
+  /* Table */
+  th:first-child, td:first-child {
+    display: none;
+  }
+  /* Footer */
+  .footer-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* Buttons */
+  .btn-xl {
+    font-size: 1.5rem;
+    padding: 1.4rem 2rem;
+  }
+  .btn-md {
+    font-size: 0.6rem;
+    letter-spacing: 1.3px;
+    padding: 0.8rem 0.8rem;
+    text-transform: uppercase;
+  }
+  /* Text */
+  .text-xl {
+    font-size: 1.5rem;
+  }
+  .text-lg {
+    font-size: 1.3rem;
+  }
+  .text-md {
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 700px) {
+  /* Showcase */
+  .showcase::after {
+    background: rgba(0, 0, 0, 0.2);
+    box-shadow: inset 80px 80px 250px #000, inset -80px -80px 250px #000;
+  }
+  /* Tab 1 */
+  #tab-1-content .tab-1-content-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  /* Tab 2 */
+  #tab-2-content .tab-2-content-top {
+    display: block;
+    text-align: center;
+  }
+  #tab-2-content .tab-2-content-bottom {
+    grid-template-columns: 1fr;
+  }
+  /* Tab 3 */
+  #tab-3-content .tab-3-content-top {
+    display: block;
+    text-align: center;
+  }
+}
