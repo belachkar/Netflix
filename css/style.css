@@ -48,6 +48,12 @@ img {
   width: 100%;
 }
 
+/* Hide Initially */
+.tab-content-item {
+  display: none;
+}
+
+/* Showcase */
 .showcase {
   position: relative;
   width: 100%;
@@ -336,6 +342,11 @@ footer p {
   margin-left: 0.5em;
 }
 
+/* Showup content */
+.show {
+  display: block;
+}
+
 @media(max-width: 960px) {
   .hide-sm {
     display: none;
@@ -362,6 +373,7 @@ footer p {
   }
   /* Table */
   th:first-child, td:first-child {
+    /* TODO: Make it visible on the top of each row */
     display: none;
   }
   /* Footer */

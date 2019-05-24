@@ -1,0 +1,20 @@
+{
+  "name": "netflix",
+  "version": "0.0.1",
+  "description": "Netflix UI using ( html - js - css )",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/belachkar/Netflix.git"
+  },
+  "keywords": [
+    "netflix",
+    "ui"
+  ],
+  "author": "Belachkar Ali",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/belachkar/Netflix/issues"
+  },
+  "homepage": "https://github.com/belachkar/Netflix#readme"
+}
